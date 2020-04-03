@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/kremenevskki/Desktop/Labs/Прогр-е C/Lab_2/main.c
+stdio.h
+-
+stdlib.h
+-
+math.h
+-
+
+/Users/kremenevskki/Desktop/Labs/Прогр-е C/Lab_2/task 2.2.6.c
+stdio.h
+-
+math.h
+-
+
