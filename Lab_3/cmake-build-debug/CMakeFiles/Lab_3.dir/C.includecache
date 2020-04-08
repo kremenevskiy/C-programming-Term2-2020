@@ -9,4 +9,8 @@
 /Users/kremenevskki/Desktop/C/Lab_3/main.c
 stdio.h
 -
+stdlib.h
+-
+string.h
+-
 
