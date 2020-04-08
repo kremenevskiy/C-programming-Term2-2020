@@ -11,6 +11,9 @@ void fillRand_3D(int ***ptr, int X_size, int Y_size, int Z_size);
 int ** create_2D(int X_size, int Y_size);
 void show_2D(int ** array, int x, int y);
 
+void delete_2D(int **arr, int x);
+void delete_3D(int ***arr, int x, int y);
+
 
 int main() {
 
@@ -58,6 +61,12 @@ int main() {
 
     printf("\n\nYZ projection (Y down, Z right)\n");
     show_2D(YZ, M, N);
+
+
+    delete_2D(XY, L);
+    delete_2D(XZ, L);
+    delete_2D(YZ, M);
+    delete_3D(XYZ, L, M);
 
     return 0;
 }
@@ -118,4 +127,28 @@ void show_2D(int ** array, int x, int y){
         }
         printf("\n");
     }
+}
+
+
+void delete_2D(int **arr, int x){
+
+    int i;
+    for(i = 0; i < x; i++){
+        free(arr[i]);
+    }
+
+    free(arr);
+}
+
+
+void delete_3D(int ***arr, int x, int y){
+
+    int i, j;
+    for(i = 0; i < x; i++) {
+        for (j = 0; j < y; j++)
+            free(arr[i][j]);
+        free(arr[i]);
+    }
+
+    free(arr);
 }
