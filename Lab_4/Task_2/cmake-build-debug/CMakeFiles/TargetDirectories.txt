@@ -1,0 +1,3 @@
+/Users/kremenevskki/Desktop/C/Lab_4/Task_2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/kremenevskki/Desktop/C/Lab_4/Task_2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/kremenevskki/Desktop/C/Lab_4/Task_2/cmake-build-debug/CMakeFiles/Task_2.dir
