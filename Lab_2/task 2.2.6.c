@@ -68,8 +68,7 @@ unsigned long long int factorial(int num){
         return 1;
 
     else
-        return n
-        um * factorial(num - 1);
+        return num * factorial(num - 1);
 }
 
 
