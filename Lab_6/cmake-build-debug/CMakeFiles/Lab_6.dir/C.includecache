@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/kremenevskki/Desktop/C/Lab_6/TripleTree.h
+stdlib.h
+-
+stdbool.h
+-
+
+/Users/kremenevskki/Desktop/C/Lab_6/main.c
+stdio.h
+-
+TripleTree.h
+/Users/kremenevskki/Desktop/C/Lab_6/TripleTree.h
+

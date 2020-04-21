@@ -78,6 +78,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/kremenevskki/Desktop/C/Lab_6/TripleTree.h">
+			<Option target="Lab_6"/>
+		</Unit>
 		<Unit filename="/Users/kremenevskki/Desktop/C/Lab_6/main.c">
 			<Option target="Lab_6"/>
 		</Unit>
