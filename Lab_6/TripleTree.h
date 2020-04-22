@@ -55,15 +55,4 @@ struct Node * Search(struct Node * root, int data){
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
 #endif //LAB_6_TRIPLETREE_H
