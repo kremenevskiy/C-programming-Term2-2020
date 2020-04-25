@@ -7,7 +7,7 @@ int main(){
     struct Node *Stack = (struct Node *) malloc(sizeof(struct Node));
 
     int i;
-    printf("Elements in stack: \n");
+    printf("\nElements in stack: \n");
     for(i = 1; i <= 20; i++){
         push(&Stack, i);
         printf("%i ", peek(Stack));
@@ -21,7 +21,7 @@ int main(){
         printf("%i ", pop(&Stack));
     }
 
-
+    printf("\n\n");
     
     free(Stack);
     return 0;
