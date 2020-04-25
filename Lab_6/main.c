@@ -8,6 +8,8 @@ int max(int a, int b, int c);
 
 int main() {
 
+    printf("\n");
+
     struct Node * root = NULL;
 
     // Inserting items to Tree
@@ -26,7 +28,7 @@ int main() {
     int Depth = count_depth(root);
     printf("Numbers of tree's levels is - %i\n", Depth);
 
-
+    printf("\n");
     return 0;
 }
 
