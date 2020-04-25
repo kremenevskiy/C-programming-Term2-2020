@@ -18,7 +18,7 @@ void moveLeft(char * arr);
 
 int main() {
 
-    printf("Введите многострочный текст.\nДля завершения ввода, введите - ;\n\n");
+    printf("Введите многострочный текст на английском языке.\nДля завершения ввода, введите - ;\n\n");
     char *array = takeUserArray();
 
     char stringArray[100][100] = {'\0'};
