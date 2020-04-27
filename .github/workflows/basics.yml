@@ -18,7 +18,7 @@ jobs:
     - name: clone my rep
       uses: actions/checkout@v1
       
-    - name: make
+    - name: Executing-lab-with-makefile
       run: echo "___________Executin Lab 5___________" && cd Lab_5 && make && echo "__________________________________"
   
   
@@ -30,6 +30,6 @@ jobs:
     - name: clone my rep
       uses: actions/checkout@v1
       
-    - name: make
+    - name: Executing-lab-with-makefile
       run: echo "___________Executin Lab 6d___________" && cd Lab_6 && make && echo "__________________________________"
   
