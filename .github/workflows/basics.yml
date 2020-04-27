@@ -33,8 +33,8 @@ jobs:
     - name: clone my rep
       uses: actions/checkout@v1
       
-    - name: list current foldet
-      run: ls -la
+    - name: make
+      run: cd Lab_5 && make
     
    
   
