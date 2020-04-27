@@ -29,6 +29,14 @@ jobs:
         echo Application name: ${{env.APPLICATION_NAME}} 
     - name: list current foldet
       run: ls -la
+    
+    - name: clone my rep
+      uses: actions/checkout@v1
+      
+    - name: list current foldet
+      run: ls -la
+    
+   
   
   deploy:
     runs-on: ubuntu-latest
@@ -40,5 +48,11 @@ jobs:
   
     - name: print dep
       run: echo name is ${{env.PACKAGE_NAME}}
+    
+    - name: few comms
+      run: aws --version
+      
+    - name: check zip
+      run: zip
 
     
