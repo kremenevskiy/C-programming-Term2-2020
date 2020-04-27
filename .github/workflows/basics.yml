@@ -27,6 +27,8 @@ jobs:
         echo hello message 1
         echo hello message 2
         echo Application name: ${{env.APPLICATION_NAME}} 
+    - name: list current foldet
+      run: ls -a
   
   deploy:
     runs-on: ubuntu-latest
