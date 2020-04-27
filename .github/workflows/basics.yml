@@ -22,6 +22,7 @@ jobs:
   
   deploy:
     runs-on: ubuntu-latest
+    needs: [build]
     steps:
     - name: print message
       run: echo Hello from deploy
