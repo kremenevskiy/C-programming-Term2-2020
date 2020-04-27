@@ -19,7 +19,7 @@ jobs:
       uses: actions/checkout@v1
       
     - name: Executing-lab-with-makefile
-      run: echo "___________Executin Lab 5___________" && cd Lab_5 && make && echo "__________________________________"
+      run: echo "__________________________________" && cd Lab_5 && make && echo "__________________________________"
   
   
   build_lab_6:
@@ -31,5 +31,5 @@ jobs:
       uses: actions/checkout@v1
       
     - name: Executing-lab-with-makefile
-      run: echo "___________Executin Lab 6d___________" && cd Lab_6 && make && echo "__________________________________"
+      run: echo "__________________________________" && cd Lab_6 && make && echo "__________________________________"
   
