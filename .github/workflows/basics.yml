@@ -3,7 +3,7 @@
 name: Labs-Actions
 env:
   APPLICATION_NAME: MyFlask
-  PACKAGE_NAME: "flask-deploy-var-${{ githab.sha }}"
+  PACKAGE_NAME: "flask-deploy-var"
   
 on:
   push:
