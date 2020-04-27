@@ -10,7 +10,7 @@ on:
 
 jobs:
   
-  build lab 5:
+  build_lab_5:
     runs-on: macos-latest
 
     steps:
@@ -22,7 +22,7 @@ jobs:
       run: echo "___________Executin Lab 5___________" && cd Lab_5 && make && echo "__________________________________"
   
   
-  build lab 6:
+  build_lab_6:
     runs-on: macos-latest
 
     steps:
