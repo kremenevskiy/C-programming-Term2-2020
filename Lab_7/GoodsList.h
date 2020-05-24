@@ -100,7 +100,7 @@ void DeleteGood(struct GoodsList* list, struct Good* good){
         rmGood->prev->next = rmGood->next;
     }
 
-    printf("Good %s deleted\n\n", rmGood->data->name);
+    printf("Good: <%s> is deleted\n\n", rmGood->data->name);
     free(rmGood);
 }
 

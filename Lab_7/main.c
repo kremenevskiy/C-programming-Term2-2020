@@ -11,7 +11,7 @@ void PrintMenu();
 void addGood(struct ClientList *clientList, struct GoodsList * goodsList);
 void removeGood(struct ClientList *clientList, struct GoodsList* goodsList);
 void AppendToFile(FILE *file, struct ClientList* clientLiist, struct GoodsList * goodsList);
-void Initialize(FILE *file, struct ClientList* clientLiist, struct GoodsList * goodsList);
+void Initialize(FILE *file, struct ClientList* clientList, struct GoodsList * goodsList);
 void readWord(char *buffer, FILE *file);
 void saveWord(FILE *file, char *str);
 int CalculatePrice(struct GoodsList goodsList);
@@ -22,9 +22,22 @@ int CalcProfit(struct GoodsList goodsList);
 int main() {
 
     FILE *file;
+    if((file = fopen("DataBase.txt", "r")) == NULL)
+    {
+        printf("ERROR. File isn't opened\n");
+        return 1;
+    }
+    else{
+        printf("\nFile opened successfully\n");
+    }
 
     struct GoodsList* goodsList = (struct GoodsList*) malloc(sizeof(struct GoodsList));
     struct ClientList* clientList = (struct ClientList*) malloc(sizeof(struct ClientList));
+
+    goodsList->head = NULL;
+    goodsList->tail = NULL;
+    clientList->head = NULL;
+    clientList->tail = NULL;
 
     Initialize(file, clientList, goodsList);
 
@@ -73,6 +86,10 @@ int main() {
                 continue;
         }
 
+
+        printf("Press any key to continue...\n");
+        int ch = getchar();
+        while(getchar() != '\n');
     }
 
 }
@@ -165,7 +182,7 @@ void removeGood(struct ClientList *clientList, struct GoodsList* goodsList){
     struct Node_Good* tempGood = goodsList->head;
 
     int i;
-    for(i = 0; i < choise; i++){
+    for(i = 0; i < choise - 1; i++){
         tempGood = tempGood->next;
         tempClient = tempClient->next;
     }
@@ -209,17 +226,17 @@ void AppendToFile(FILE *file, struct ClientList* clientLiist, struct GoodsList *
 
 void Initialize(FILE *file, struct ClientList* clientList, struct GoodsList * goodsList){
 
-    if((file = fopen("DataBase.txt", "r")) == NULL)
-    {
-        printf("ERROR. File isn't opened\n");
-        return ;
-    }
-    else{
-        printf("\nFile opened successfully\n");
-    }
+//    if((file = fopen("DataBase.txt", "r")) == NULL)
+//    {
+//        printf("ERROR. File isn't opened\n");
+//        return ;
+//    }
+//    else{
+//        printf("\nFile opened successfully\n");
+//    }
 
     int check = getc(file);
-    if (check == -1){
+    if (check == EOF){
         printf("No Data to Initialize from file\n"
                "File is empty\n\n");
         return;
@@ -241,7 +258,7 @@ void Initialize(FILE *file, struct ClientList* clientList, struct GoodsList * go
         saveWord(file, good->name);
         saveWord(file, good->clientID);
 
-        char buffer[20];
+        char buffer[20] = "";
         readWord(buffer, file);
         int value;
         sscanf(buffer, "%d", &value);
@@ -259,12 +276,14 @@ void Initialize(FILE *file, struct ClientList* clientList, struct GoodsList * go
 
         AddClient(clientList, client);
         AddGood(goodsList, good);
-
-        int ch = fgetc(file);
-        if(ch == -1){
+        char ch = getc(file);
+        if(ch == EOF){
             printf("Data from file initialized successfully!\n"
                    "PS: Initialized in 2 DublyLinkedList\n");
             break;
+        }
+        else{
+            fseek(file, -1, SEEK_CUR);
         }
     }
 
@@ -303,7 +322,7 @@ int CalculatePrice(struct GoodsList goodsList){
         }
     }
 
-    printf("The cost of all stored items: %i $\n", price % 10000);
+    printf("\nThe cost of all stored items: %i $\n\n", price);
 
     return price;
 }
@@ -329,7 +348,7 @@ int CalculateMoney(struct GoodsList goodsList){
 int CalcProfit(struct GoodsList goodsList){
     int profit = CalculatePrice(goodsList) - CalculateMoney(goodsList);
 
-    printf("Profit is: %i\n", profit % 10000);
+    printf("Profit is: %i $\n", profit);
     return profit;
 }
 

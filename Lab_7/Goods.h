@@ -3,10 +3,10 @@
 
 struct Good{
     char name[20];
-    char clientID[10];
+    char clientID[20];
     int value;
     int money;
-    char date[10];
+    char date[20];
     char timeKeeping[20];
 };
 

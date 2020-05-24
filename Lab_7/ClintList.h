@@ -49,7 +49,7 @@ void AddClient(struct ClientList* list, struct Client* client){
 
 void PrintClients(struct ClientList list){
 
-    printf("\n____Printing Clients____\n");
+    printf("\n____Printing Clients____\n\n");
     if(list.head == NULL){
         printf("Client List is empty!\n");
         return;
@@ -79,7 +79,7 @@ int PrintAllNames(struct ClientList list){
         num ++;
         temp = temp->next;
     }
-    printf("________________________\n");
+    printf("_____________________________\n");
 
     return num;
 
@@ -140,7 +140,7 @@ void DeleteClient(struct ClientList* list, struct Client* man){
         rmClient->prev->next = rmClient->next;
     }
 
-    printf("Client %s deleted\n\n", rmClient->data->name);
+    printf("Client: <%s> is deleted\n\n", rmClient->data->name);
     free(rmClient);
 }
 
