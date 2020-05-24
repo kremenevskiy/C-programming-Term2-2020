@@ -9,14 +9,14 @@ void PrintInfoGoods(struct Good good);
 
 struct GoodsList {
 
-    struct Node_Good* head;
-    struct Node_Good* tail;
+//    struct Node_Good* head;
+//    struct Node_Good* tail;
 
     struct Node_Good {
         struct Good *data;
         struct Node_Good *next;
         struct Node_Good *prev;
-    };
+    } *head, *tail;
 };
 
 

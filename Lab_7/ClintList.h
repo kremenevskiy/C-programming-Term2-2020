@@ -9,14 +9,14 @@ void PrintInfo(struct Client client);
 
 struct ClientList {
 
-    struct Node_Client* head;
-    struct Node_Client* tail;
+//    struct Node_Client* head;
+//    struct Node_Client* tail;
 
     struct Node_Client {
         struct Client *data;
         struct Node_Client *next;
         struct Node_Client *prev;
-    };
+    } *head, *tail;
 };
 
 
@@ -43,7 +43,6 @@ void AddClient(struct ClientList* list, struct Client* client){
     list->head->prev = newClient;
     newClient->next = list->head;
     list->head = newClient;
-
 }
 
 
@@ -148,6 +147,5 @@ void DeleteClient(struct ClientList* list, struct Client* man){
 void PrintInfo(struct Client client){
     printf("\tClient: %s\nPassport: %s\n\n", client.name, client.Passport);
 }
-
 
 #endif //C_LANG_CLINTLIST_H

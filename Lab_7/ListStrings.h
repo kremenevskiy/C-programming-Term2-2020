@@ -10,12 +10,10 @@ struct ListString {
         char *data;
         struct Node_s *next;
         struct Node_s *prev;
-    };
+    } *head, *tail;
 
-    struct Node_s *head;
-    struct Node_s *tail;
-
-
+//    struct Node_s *head;
+//    struct Node_s *tail;
 };
 
 
@@ -104,4 +102,3 @@ void Delete_s(struct ListString * list, char *data) {
 
     free(rmNode);
 }
-

@@ -158,7 +158,6 @@ void addGood(struct ClientList *clientList, struct GoodsList * goodsList){
     AddGood(goodsList, newGood);
 
     printf("All data saved successfully\n\n");
-
 }
 
 
@@ -191,8 +190,6 @@ void removeGood(struct ClientList *clientList, struct GoodsList* goodsList){
     DeleteClient(clientList, tempClient->data);
 
     printf("Element deleted!\n");
-
-
 }
 
 void AppendToFile(FILE *file, struct ClientList* clientLiist, struct GoodsList * goodsList){
@@ -200,9 +197,6 @@ void AppendToFile(FILE *file, struct ClientList* clientLiist, struct GoodsList *
     {
         printf("ERROR. File isn't opened\n");
         return ;
-    }
-    else{
-        printf("\nFile opened successfully\n");
     }
 
     struct Node_Client* tempClient = NewClient();
@@ -220,6 +214,8 @@ void AppendToFile(FILE *file, struct ClientList* clientLiist, struct GoodsList *
         tempGood = tempGood->next;
     }
     fclose(file);
+
+    printf("All new Data saved to the file succefully !\n");
 
 }
 
@@ -300,6 +296,7 @@ void readWord(char *buffer, FILE *file){
         }
     }
 }
+
 
 void saveWord(FILE *file, char str[]){
     char buffer[20] = "";

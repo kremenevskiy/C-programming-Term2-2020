@@ -7,10 +7,10 @@ struct DLinkList {
         int data;
         struct Node *next;
         struct Node *prev;
-    };
+    } *head, *tail;
 
-    struct Node *head;
-    struct Node *tail;
+//    struct Node *head;
+//    struct Node *tail;
 };
 
 
