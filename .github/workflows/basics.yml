@@ -33,3 +33,16 @@ jobs:
     - name: Executing-lab-with-makefile
       run: echo "__________________________________" && cd Lab_6 && make && echo "__________________________________"
   
+  
+  build_lab_7:
+    runs-on: macos-latest
+
+    steps:
+    
+    - name: clone my rep
+      uses: actions/checkout@v1
+      
+    - name: Executing-lab-with-makefile
+      run: echo "__________________________________" && cd Lab_7 && make && echo "__________________________________"
+  
+
